@@ -21,7 +21,8 @@ class FancyBottomNavigation extends StatefulWidget {
       this.activeIconColor,
       this.inactiveIconColor,
       this.textColor,
-      this.barBackgroundColor})
+      this.barBackgroundColor,
+      this.bottomPadding = 0})
       : assert(onTabChangedListener != null),
         assert(tabs != null);
 
@@ -39,7 +40,7 @@ class FancyBottomNavigation extends StatefulWidget {
   final double circleOutline;
   final double shadowAllowance;
   final double barHeight;
-
+  final double bottomPadding;
   final Key key;
 
   @override
@@ -122,6 +123,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation>
       children: <Widget>[
         Container(
           height: widget.barHeight,
+          padding: EdgeInsets.only(bottom: widget.bottomPadding),
           decoration: BoxDecoration(color: barBackgroundColor, boxShadow: [
             BoxShadow(
                 color: Colors.black12, offset: Offset(0, -1), blurRadius: 8)
