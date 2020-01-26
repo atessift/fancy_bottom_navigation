@@ -122,7 +122,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation>
       alignment: Alignment.bottomCenter,
       children: <Widget>[
         Container(
-          height: widget.barHeight,
+          height: widget.barHeight + widget.bottomPadding,
           padding: EdgeInsets.only(bottom: widget.bottomPadding),
           decoration: BoxDecoration(color: barBackgroundColor, boxShadow: [
             BoxShadow(
@@ -155,6 +155,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation>
                   widget.shadowAllowance) /
               2,
           child: Container(
+            padding: EdgeInsets.only(bottom: widget.bottomPadding),
             child: AnimatedAlign(
               duration: Duration(milliseconds: ANIM_DURATION),
               curve: Curves.easeOut,
